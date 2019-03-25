@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<div class="jumbotron" align="left" >
+    <form method="POST">
+        <div class="barcodeSearch" align="left">
+            <label for="BarcodeImage">Get Barcode Image :</label>
+            <input type="search" id="BarcodeImage" name="search"
+                    aria-label="ID Number">
+            <button>Search</button>
+        
+        
+            {% if barcode_url|length %}
+                <img src="{{barcode_url}}" width="150px" style="padding-left: 20px;"">
+            {% endif %}
+
+        </div>
+    </form>
+    <h2>List of Drawings in the Database</h2>
+    <p style="font-size: 16px">for accesing the drawings information you going to need to type the following:</p>
+    <p style="font-size: 16px">https://www.ibktech.info/ret/xcd'code''date'   date has to be MMDDYY</p>
+    <ul>
+ 
+        {% for item in show_data %}
+            <li>{{item}}</li>
+        {% endfor %}
+    </ul>
+</div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+<div class="jumbotron">
+
+    {% if current_user.is_authenticated %}
+    <p> Your are Log In. </p>
+    {% else %}
+    <p>Please login</p>
+    {% endif %}
+    <h2>Welcome To IBK </h2>
+</div>
+</div>
+
+{% endblock %}

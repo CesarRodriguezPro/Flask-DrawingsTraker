@@ -1,0 +1,33 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<div class = "container">
+<div class="jumbotron", align="left">
+    <table>
+        <tr>
+        <td>
+            <H2>Add Drawings </H2>
+            <p>Please add information</p>
+        </td>
+        <td>
+            {% if barcode_url|length %}
+                <img src="{{barcode_url}}" width="150px" style="padding-left: 10px;"">
+
+            {% endif %}
+        </td>
+        </tr>
+    </table>
+    <form method="POST">
+        <div class="form-group">
+        {{form.hidden_tag()}}
+        {{ wtf.quick_form(form) }}
+        </div>
+    </form>
+</div>
+
+
+</div>
+
+{% endblock %}
+
